@@ -6,3 +6,14 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`)
 );
 
+DELIMITER //
+CREATE PROCEDURE company.getUserById
+(IN user_id int)
+BEGIN
+  SELECT * FROM company.USER
+  WHERE id = user_id;
+END //
+DELIMITER ;
+
+
+CALL company.getUserById(2);
