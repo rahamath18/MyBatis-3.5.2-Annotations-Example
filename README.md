@@ -36,3 +36,4 @@
 
 	https://mybatis.org/mybatis-3/index.html
 	
+Note: db stored procedure call may have some issues.	
