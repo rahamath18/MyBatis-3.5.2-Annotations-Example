@@ -8,6 +8,13 @@
 	<artifactId>MyBatis-3.5.2-Annotations-Example</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<properties>
+		<java.version>12</java.version>
+		<maven.compiler.source>12</maven.compiler.source>
+     <maven.compiler.target>12</maven.compiler.target>
+	</properties>
+	
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
@@ -16,11 +23,23 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.5.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.12</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8 -->
+		<dependency>
+		    <groupId>com.oracle.ojdbc</groupId>
+		    <artifactId>ojdbc8</artifactId>
+		    <version>19.3.0.0</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.13</version>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.27</version>
 		</dependency>
 	</dependencies>
 </project>

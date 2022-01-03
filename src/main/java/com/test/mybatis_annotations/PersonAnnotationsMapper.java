@@ -10,17 +10,17 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 
-public interface UserAnnotationsMapper {
+public interface PersonAnnotationsMapper {
 
-	   final String insertUser = "INSERT INTO USER (FIRST_NAME, LAST_NAME, EMAIL ) VALUES (#{firstName}, #{lastName}, #{email})";
-	   final String getAllUsers = "SELECT * FROM USER"; 
-	   final String getUserById = "SELECT * FROM USER WHERE ID = #{id}";
-	   final String updateUser = "UPDATE USER SET LAST_NAME = #{lastName}, EMAIL = #{email} WHERE ID = #{id}";
-	   final String deleteUserById = "DELETE from USER WHERE ID = #{id}";
-	   final String callByUserId = "{call getUserById(#{id, jdbcType = INTEGER, mode = IN})}";
-	   final String getUsersByEmail = "SELECT * FROM USER WHERE EMAIL != null";
+	   final String insertPerson = "INSERT INTO person (FIRST_NAME, LAST_NAME, EMAIL ) VALUES (#{firstName}, #{lastName}, #{email})";
+	   final String getAllPersons = "SELECT * FROM person"; 
+	   final String getPersonById = "SELECT * FROM person WHERE ID = #{id}";
+	   final String updatePerson = "UPDATE person SET LAST_NAME = #{lastName}, EMAIL = #{email} WHERE ID = #{id}";
+	   final String deletePersonById = "DELETE from person WHERE ID = #{id}";
+	   final String callByPersonId = "call getPerson(#{id, jdbcType = INTEGER, mode = IN})";
+	   final String getPersonsByEmail = "SELECT * FROM person WHERE EMAIL != null";
 	   
-	   @Select(getAllUsers)
+	   @Select(getAllPersons)
 	   @Results(value = {
 	      @Result(property = "id", column = "ID"),
 	      @Result(property = "firstName", column = "FIRST_NAME"),
@@ -28,9 +28,9 @@ public interface UserAnnotationsMapper {
 	      @Result(property = "email", column = "EMAIL")
 	   })
 	   
-	   List<User> getAllUsers();
+	   List<Person> getAllPersons();
 	  
-	   @Select(getUserById)
+	   @Select(getPersonById)
 	   @Results(value = {
 		  @Result(property = "id", column = "ID"),
 	      @Result(property = "firstName", column = "FIRST_NAME"),
@@ -38,19 +38,19 @@ public interface UserAnnotationsMapper {
 	      @Result(property = "email", column = "EMAIL")
 	   })
 	   
-	   User getUserById(int id);
+	   Person getPersonById(int id);
 
-	   @Update(updateUser)
-	   void updateUser(User student);
+	   @Update(updatePerson)
+	   void updatePerson(Person student);
 
-	   @Delete(deleteUserById)
-	   void deleteUserById(int id);
+	   @Delete(deletePersonById)
+	   void deletePersonById(int id);
 	  
-	   @Insert(insertUser)
-	   @Options(useGeneratedKeys = true, keyProperty = "id")
-	   void insertUser(User user);
+	   @Insert(insertPerson)
+	   @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn="id")
+	   void insertPerson(Person person);
 	   
-	   @Select(callByUserId)
+	   @Select(callByPersonId)
 	   @Results(value = {
 	      @Result(property = "id", column = "ID"),
 	      @Result(property = "firstName", column = "FIRST_NAME"),
@@ -58,6 +58,6 @@ public interface UserAnnotationsMapper {
 	      @Result(property = "email", column = "EMAIL")
 	   })
 	   
-	   User getCallByUserId(int id);
+	   Person getCallByPersonId(int id);
 	   
 }

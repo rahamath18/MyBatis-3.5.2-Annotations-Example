@@ -8,10 +8,25 @@
          <transactionManager type = "JDBC"/> 
 			
          <dataSource type = "POOLED">
-            <property name = "driver" value = "com.mysql.jdbc.Driver"/>
-            <property name = "url" value = "jdbc:mysql://localhost:3306/company"/>
-            <property name = "username" value = "root"/>
+			
+			<!-- MySql 8.0.27 -->
+<!--             <property name = "driver" value = "com.mysql.cj.jdbc.Driver"/> -->
+<!--             <property name = "url" value = "jdbc:mysql://localhost:3306/company"/> -->
+<!--             <property name = "username" value = "root"/> -->
+<!--             <property name = "password" value = "password"/> -->
+            
+            <!-- PostgreSQL 12.9-1 -->
+<!--             <property name = "driver" value = "org.postgresql.Driver"/> -->
+<!--             <property name = "url" value = "jdbc:postgresql://127.0.0.1:5432/company"/> -->
+<!--             <property name = "username" value = "postgres"/> -->
+<!--             <property name = "password" value = "password"/> -->
+            
+            <!-- Oracle 19.3 (19c) -->
+            <property name = "driver" value = "oracle.jdbc.driver.OracleDriver"/>
+            <property name = "url" value = "jdbc:oracle:thin:@localhost:1521:orcl"/>
+            <property name = "username" value = "company"/>
             <property name = "password" value = "password"/>
+            
          </dataSource>   
          
       </environment>

@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class MyBatisAnnotationsApp {
+public class MyBatisAnnotationsApp_CALL {
 
 	public static void main(String[] args) throws IOException, SQLException {
 
@@ -20,18 +20,6 @@ public class MyBatisAnnotationsApp {
 		SqlSession session = sqlSessionFactory.openSession();   
 		session.getConfiguration().addMapper(PersonAnnotationsMapper.class);
 		PersonAnnotationsMapper mapper = session.getMapper(PersonAnnotationsMapper.class);
-
-		insertPerson(session, mapper);
-
-		fetchAllPerson(mapper);
-		fetchPersonById(mapper, 2);
-		fetchPersonById(mapper, 3);
-
-		updatePerson(session, mapper);
-		fetchAllPerson(mapper);
-
-		deletePersonById(session, mapper, 2);
-		fetchAllPerson(mapper);
 
 		personStoredProcedure(mapper, 3);
 

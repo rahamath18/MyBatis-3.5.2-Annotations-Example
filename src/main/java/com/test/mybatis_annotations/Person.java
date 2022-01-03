@@ -1,24 +1,24 @@
 package com.test.mybatis_annotations;
 
-public class User {
+public class Person {
 
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String email;
 
-	public User() {
+	public Person() {
     }
     
-	public User(String firstName, String lastName, String email) {
+	public Person(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
-    public int getId() {
-        return id;
+    public Integer getId() {
+        return this.id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getFirstName() {
@@ -41,6 +41,6 @@ public class User {
     }
     @Override
     public String toString() {
-        return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+        return "Identity [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
     }
 }
