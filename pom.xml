@@ -15,6 +15,40 @@
      <maven.compiler.target>12</maven.compiler.target>
 	</properties>
 	
+	<name>MyBatis-3.5.2-Annotations-Example</name>
+	<description>MyBatis 3.5.2 Annotations Example</description>
+	<url>https://github.com/rahamath18/MyBatis-3.5.2-Annotations-Example</url>
+
+	<organization>
+		<name>Personal</name>
+		<url>https://rahamaths.appspot.com/</url>
+	</organization>
+	
+	<developers>
+		<developer>
+			<id>rahamath18</id>
+			<name>Rahamath S</name>
+			<email>rahamath18@yahoo.com</email>
+			<organization>Personal</organization>
+			<roles>
+				<role>Project Lead</role>
+			</roles>
+			<timezone>GMT +5.30</timezone>
+		</developer>
+	</developers>
+	
+	<licenses>
+		<license>
+			<name>Community Project General License</name>
+			<url>https://rahamaths.appspot.com/</url>
+			<comments>
+				Copyright © 2003-2019 rahamaths.appspot.com. All rights reserved.
+				
+				As this is a Community Project General License, 
+				you may use the project or part of the project for your own explore and learnings.
+			</comments>
+		</license>
+	</licenses>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
